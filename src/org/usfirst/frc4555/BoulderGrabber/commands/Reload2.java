@@ -42,7 +42,7 @@ public class Reload2 extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	RobotMap.puncherDoubleSolenoid2.set(DoubleSolenoid.Value.kForward);
+    	RobotMap.puncherDoubleSolenoid2.set(DoubleSolenoid.Value.kReverse);
     }
 
     // Called repeatedly when this Command is scheduled to run

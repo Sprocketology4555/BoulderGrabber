@@ -15,7 +15,6 @@ import org.usfirst.frc4555.BoulderGrabber.commands.*;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.*;
-import org.usfirst.frc4555.BoulderGrabber.subsystems.*;
 
 
 /**
@@ -70,17 +69,17 @@ public class OI {
 
         joystick1 = new Joystick(0);
         
-        goGrab = new JoystickButton(joystick1, 1);
+        goGrab = new JoystickButton(joystick1, 3);
         goGrab.whileHeld(new Grab());
-        goRelease = new JoystickButton(joystick1, 2);
+        goRelease = new JoystickButton(joystick1, 4);
         goRelease.whileHeld(new Release());
-        goPunch = new JoystickButton(joystick1, 3);
+        goPunch = new JoystickButton(joystick1, 2);
         goPunch.whenPressed(new Punch());
-        goReload = new JoystickButton(joystick1, 3);
+        goReload = new JoystickButton(joystick1, 2);
         goReload.whenReleased(new Reload());
-        goReleasePunch = new JoystickButton(joystick1, 4);
+        goReleasePunch = new JoystickButton(joystick1, 1);
         goReleasePunch.whenPressed(new ReleasePunch());
-        goReload2 = new JoystickButton(joystick1, 4);
+        goReload2 = new JoystickButton(joystick1, 1);
         goReload2.whenReleased(new Reload2());
         goPickup = new JoystickButton(joystick1, 5);
         goPickup.whenPressed(new Pickup());
