@@ -46,7 +46,7 @@ public class RobotMap {
     	clawDoubleSolenoid1 = new DoubleSolenoid(0, 0, 7);
         LiveWindow.addActuator("Claw", "Double Solenoid 1", clawDoubleSolenoid1);
         
-        puncherDoubleSolenoid2 = new DoubleSolenoid(0, 1, 6);
+        puncherDoubleSolenoid2 = new DoubleSolenoid(0, 6, 1);
         LiveWindow.addActuator("Puncher", "Double Solenoid 2", puncherDoubleSolenoid2);
         
         wedgeDoubleSolenoid3 = new DoubleSolenoid(0, 5, 2);
@@ -76,7 +76,7 @@ public class RobotMap {
         
         driveTrainRobotDrive41.setSafetyEnabled(true);
         driveTrainRobotDrive41.setExpiration(0.1);
-        driveTrainRobotDrive41.setSensitivity(0.2);
+        driveTrainRobotDrive41.setSensitivity(0.05);
         driveTrainRobotDrive41.setMaxOutput(.9);
         drivetrainSpeedController1.setInverted(true);
         drivetrainSpeedController2.setInverted(true);
