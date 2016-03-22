@@ -56,10 +56,10 @@ public class RobotMap {
     	//clawDoubleSolenoid1 = new DoubleSolenoid(0, 0, 7);
         //LiveWindow.addActuator("Claw", "Double Solenoid 1", clawDoubleSolenoid1);
         
-        puncherDoubleSolenoid2 = new DoubleSolenoid(0, 0, 7);
+        puncherDoubleSolenoid2 = new DoubleSolenoid(0, 1, 6);
         LiveWindow.addActuator("Puncher", "Double Solenoid 2", puncherDoubleSolenoid2);
         
-        wedgeDoubleSolenoid3 = new DoubleSolenoid(0, 1, 6);
+        wedgeDoubleSolenoid3 = new DoubleSolenoid(0, 0, 7);
         LiveWindow.addActuator("Wedge", "Double Solenoid 3", wedgeDoubleSolenoid3);
         
         
