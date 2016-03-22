@@ -5,7 +5,6 @@ package org.usfirst.frc4555.BoulderGrabber.subsystems;
 import org.usfirst.frc4555.BoulderGrabber.RobotMap;
 import org.usfirst.frc4555.BoulderGrabber.commands.ArcadeDrive;
 
-import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
