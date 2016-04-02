@@ -1,3 +1,4 @@
+
 package org.usfirst.frc4555.BoulderGrabber.commands;
 
 import org.usfirst.frc4555.BoulderGrabber.Robot;
@@ -23,19 +24,27 @@ public class AutoArmDown extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	
-    	RobotMap.armsSpeedController1.set(-.5);
-    	RobotMap.armsSpeedController2.set(.5);
-    	
+   
     	timer1.start();
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	
-    	if (timer1.get() >= 1) {
+    	if (timer1.get() <= .7) {
     		
-    		value1 = true;
+        	RobotMap.armsSpeedController1.set(.5);
+        	RobotMap.armsSpeedController2.set(-.5);
+    		
+    	
+    	} else if (timer1.get() >= .7) {
+    		
+        	RobotMap.armsSpeedController1.set(0);
+        	RobotMap.armsSpeedController2.set(0);
+        	
+        	value1 = true;
+    		
     	}
     }
 
@@ -46,12 +55,10 @@ public class AutoArmDown extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	
-    	RobotMap.armsSpeedController1.set(0);
-    	RobotMap.armsSpeedController2.set(0);
-    	
+
     	timer1.stop();
     	timer1.reset();
+    	
     }
 
     // Called when another command which requires one or more of the same

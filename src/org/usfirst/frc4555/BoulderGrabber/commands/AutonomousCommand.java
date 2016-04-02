@@ -9,8 +9,8 @@ public class AutonomousCommand extends CommandGroup {
 
     public AutonomousCommand() {
     	
+    	addSequential(new AutoArmDown());
     	addSequential(new DriveForward());
-
     	
     }
     

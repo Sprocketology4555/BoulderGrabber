@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class DriveForward extends Command {
 	
-	Timer timer1 = new Timer();
+	Timer timer2 = new Timer();
 	
 	boolean value1 = false;
 
@@ -24,21 +24,31 @@ public class DriveForward extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	
-    	RobotMap.drivetrainSpeedController1.set(1);
-    	RobotMap.drivetrainSpeedController2.set(1);
-    	RobotMap.drivetrainSpeedController3.set(-1);
-    	RobotMap.drivetrainSpeedController4.set(-1);
+    	timer2.start();
     	
-    	timer1.start();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	
-    	if (timer1.get() >= 5) {
+    	if (timer2.get() <= 4) {
     		
-    		value1 = true;
+        	RobotMap.drivetrainSpeedController1.set(-.2);
+        	RobotMap.drivetrainSpeedController2.set(-.2);
+        	RobotMap.drivetrainSpeedController3.set(.5);
+        	RobotMap.drivetrainSpeedController4.set(.5);
+    		
+    	} else if (timer2.get() > 4) {
+    		
+        	RobotMap.drivetrainSpeedController1.set(0);
+        	RobotMap.drivetrainSpeedController2.set(0);
+        	RobotMap.drivetrainSpeedController3.set(0);
+        	RobotMap.drivetrainSpeedController4.set(0);
+        	
+        	value1 = true;
+        	
     	}
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -49,14 +59,8 @@ public class DriveForward extends Command {
     // Called once after isFinished returns true
     protected void end() {
     	
-    	RobotMap.drivetrainSpeedController1.set(0);
-    	RobotMap.drivetrainSpeedController2.set(0);
-    	RobotMap.drivetrainSpeedController3.set(0);
-    	RobotMap.drivetrainSpeedController4.set(0);
-
-    	
-    	timer1.stop();
-    	timer1.reset();
+    	timer2.stop();
+    	timer2.reset();
     }
 
     // Called when another command which requires one or more of the same

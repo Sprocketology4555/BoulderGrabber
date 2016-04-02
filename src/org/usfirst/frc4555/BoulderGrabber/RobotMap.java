@@ -81,7 +81,7 @@ public class RobotMap {
         driveTrainRobotDrive41.setSafetyEnabled(true);
         driveTrainRobotDrive41.setExpiration(0.1);
         driveTrainRobotDrive41.setSensitivity(0.5);
-        driveTrainRobotDrive41.setMaxOutput(.75);
+        driveTrainRobotDrive41.setMaxOutput(.6);
         
         drivetrainSpeedController1.setInverted(true);
         drivetrainSpeedController2.setInverted(true);

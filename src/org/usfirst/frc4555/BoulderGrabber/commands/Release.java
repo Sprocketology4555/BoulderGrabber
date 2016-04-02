@@ -47,13 +47,15 @@ public class Release extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	
+    	timer1.start();
+    	
     	RobotMap.clawSpeedController.set(-.5);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	
-    	if (timer1.get() >= 1) {
+    	if (timer1.get() >= .25) {
     		
     		value1 = true;
     	}
@@ -68,6 +70,9 @@ public class Release extends Command {
     protected void end() {
     	
     	RobotMap.clawSpeedController.set(0);
+    	
+    	timer1.stop();
+    	timer1.reset();
     }
 
     // Called when another command which requires one or more of the same
